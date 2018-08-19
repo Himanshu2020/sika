@@ -20,8 +20,8 @@ const uint64_t DIFFICULTY_TARGET                             = 60; // seconds
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x2b;
-const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 40;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x125c99;
+const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3         = 3 * DIFFICULTY_TARGET;
 
@@ -29,7 +29,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(33000000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(330000000000000);
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t ZAWY_DIFFICULTY_V2                              = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 3;
@@ -40,11 +40,11 @@ const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 800000;
 const uint64_t DIFFICULTY_WINDOW_V3                          = 60;
 const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                    = DIFFICULTY_WINDOW_V3 + 1;
 
-const unsigned EMISSION_SPEED_FACTOR                         = 21;
+const unsigned EMISSION_SPEED_FACTOR                         = 23;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(80000000000000);
 
 /* How to generate a premine:
 
@@ -74,8 +74,8 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 20000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
-const uint64_t MINIMUM_FEE                                   = UINT64_C(10);
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 4;
+const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
 
 const uint64_t MINIMUM_MIXIN_V1                              = 0;
 const uint64_t MAXIMUM_MIXIN_V1                              = 100;
@@ -135,14 +135,7 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 /* Block heights we are going to have hard forks at */
 const uint64_t FORK_HEIGHTS[] =
 {
-    187000,
-    350000,
-    440000,
-    620000,
-    800000,
-    1000000,
-    1200000,
-    1400000
+
 };
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
@@ -182,8 +175,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  11110;
-const int      RPC_DEFAULT_PORT                              =  11112;
+const int      P2P_DEFAULT_PORT                              =  11122;
+const int      RPC_DEFAULT_PORT                              =  11123;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -202,12 +195,12 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 {
-    {  0xb5, 0x64, 0x4a, 0x6c, 0x57, 0x6C, 0x57, 0x41, 0x65, 0xf9, 0x91, 0xa4, 0xb6, 0xc1, 0x48, 0x21  }
+    {  0x49, 0xcb, 0x4a, 0x6c, 0x57, 0x6C, 0xad, 0x41, 0x65, 0xf9, 0x81, 0xa4, 0xb6, 0xc1, 0x48, 0x2b  }
 };
 
 const char* const SEED_NODES[] = {
-  "35.237.245.25:11110", 
-  "35.237.232.110:11110",
-  "35.231.34.171:11110"
+  "35.237.245.25:11122", 
+  "35.237.232.110:11122",
+  "35.231.34.171:11122"
 };
 } // CryptoNote
